@@ -5,19 +5,19 @@ import morgan from 'morgan';
 import apiRoutes from './routes';
 import stateRouting from './middleware/routing.mw';
 import { ADDRGETNETWORKPARAMS } from 'dns';
-
+const CLIENT_PATH = join(__dirname, '../../client');
 const cors = require('cors');
-
+let app = express();
 app.use(cors());
 
-const CLIENT_PATH = join(__dirname, '../../client');
 
 
 
 
 
 
-let app = express();
+
+
 
 app.use(morgan('dev'));
 app.use(express.static(CLIENT_PATH));
@@ -45,7 +45,7 @@ function isValidChirp(chirp) {
 
 app.post('/chirps',(req,res)=>{
     if(isValidChirp(req.body)){
-const mew = {
+const chirp = {
     name:req.body.name.toString(),
     content: req.body.content.toString()
 };

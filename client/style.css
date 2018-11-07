@@ -6,3 +6,9 @@
     width: 50%;
     margin: 0 auto;
 }
+
+#chirper-icon{    
+    height:100px;
+    width:100px;
+    color: lightblue;
+}
